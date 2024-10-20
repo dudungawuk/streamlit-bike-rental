@@ -1,8 +1,10 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
-
-df_hour = pd.read_csv("../data/hour.csv")
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, "../data/hour.csv")
+df_hour = pd.read_csv(file_path)
 df_hour["dteday"] = pd.to_datetime(df_hour["dteday"])
 
 with st.sidebar:
